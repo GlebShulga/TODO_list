@@ -1,11 +1,11 @@
 #--------------------------------------STAGE 1-----------------------------
 FROM node:alpine AS nodeServer
-CMD [ "yarn","start" ]
+CMD [ "npm","start" ]
 WORKDIR /app
 COPY package*.json ./
-RUN npm config set scripts-prepend-node-path true && yarn install
+RUN npm config set scripts-prepend-node-path true && npm install
 COPY . .
-RUN yarn build --silent --only=production --ignore-optional
+RUN npm build --silent --only=production --ignore-optional
 #--------------------------------------STAGE 2-----------------------------
 FROM nginx:alpine AS webServer
 WORKDIR /app

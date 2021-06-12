@@ -156,14 +156,14 @@ const config = {
               name: '[name].[ext]',
               outputPath: 'fonts/'
             }
-          },
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10 * 1024,
-              noquotes: true
-            }
           }
+          // {
+          //   loader: 'svg-url-loader',
+          //   options: {
+          //     limit: 10 * 1024,
+          //     noquotes: true
+          //   }
+          // }
         ]
       }
     ]
