@@ -1,5 +1,7 @@
 This project was made with [React Boilerplate](https://github.com/ovasylenko/skillcrucial-react-redux-boilerplate), using [Redux](https://redux.js.org/).
 
+![How it looks like](/images/picture.jpg)
+
 ## Key Features
 
 - Fully Responsive
