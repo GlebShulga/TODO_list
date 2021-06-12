@@ -1,6 +1,6 @@
 This project was made with [React Boilerplate](https://github.com/ovasylenko/skillcrucial-react-redux-boilerplate), using [Redux](https://redux.js.org/).
 
-![How it looks like](/images/picture.jpg)
+![How it looks like](https://github.com/GlebShulga/TODO_list/blob/main/client/assets/images/picture.png)
 
 ## Key Features
 
