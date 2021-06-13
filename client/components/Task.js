@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeStatus, changeTitle, delTask } from '../redux/reducers/tasks'
+import deteteIcon from '../assets/static/images/delete.svg'
 
 const Task = (props) => {
   const { task } = props
@@ -100,7 +101,7 @@ const Task = (props) => {
         className="flex-no-shrink p-2 ml-2 border-2 rounded text-red-600 border-red-600 hover:text-white hover:bg-red-600"
         onClick={() => dispatch(delTask(task.taskId))}
       >
-        <svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+        {/* <svg width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
           <path d="M12 12h2v12h-2z" fill="currentColor" />
           <path d="M18 12h2v12h-2z" fill="currentColor" />
           <path
@@ -108,7 +109,10 @@ const Task = (props) => {
             fill="currentColor"
           />
           <path d="M12 2h8v2h-8z" fill="currentColor" />
-        </svg>
+        </svg> */}
+
+        <img src={deteteIcon} alt="delete icon" />
+        <img alt="wave" src="images/wave.jpg" />
       </button>
     </div>
   )
