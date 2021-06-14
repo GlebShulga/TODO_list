@@ -1,11 +1,9 @@
 const { resolve } = require('path')
 require('dotenv').config()
-const fs = require('fs')
 
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const CLIENT_PORT = 8087
@@ -150,18 +148,10 @@ const config = {
       {
         test: /\.svg$/,
         use: [
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     name: '[name].[ext]',
-          //     outputPath: 'fonts/'
-          //   }
-          // }
           {
             loader: 'svg-url-loader',
             options: {
-              limit: 10 * 1024,
-              noquotes: true
+              limit: 10 * 1024
             }
           }
         ]

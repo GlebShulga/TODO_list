@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeStatus, changeTitle, delTask } from '../redux/reducers/tasks'
-import deteteIcon from '../assets/static/images/delete.svg'
+import deleteIcon from '../assets/static/images/delete.svg'
 
 const Task = (props) => {
   const { task } = props
@@ -110,8 +110,8 @@ const Task = (props) => {
           />
           <path d="M12 2h8v2h-8z" fill="currentColor" />
         </svg> */}
+        <img alt="wave" src={deleteIcon} />
 
-        <img src={deteteIcon} alt="delete icon" />
         <img alt="wave" src="images/wave.jpg" />
       </button>
     </div>

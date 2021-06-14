@@ -11,34 +11,22 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 // const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 
-const { v4: uuidv4 } = require('uuid')
-
-const gitRevisionPlugin = new GitRevisionPlugin()
 const date = +new Date()
 const APP_VERSION = Buffer.from((date - (date % (1000 * 60 * 30))).toString())
   .toString('base64')
   .replace(/==/, '')
-console.log(date - (date % (1000 * 60 * 30)))
 
 const config = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserJSPlugin({ parallel: true }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessor: require('cssnano'),
-        cssProcessorPluginOptions: {
-          preset: ['default', { discardComments: { removeAll: true } }]
-        }
-      })
+      new TerserJSPlugin({ parallel: true })
     ]
   },
   entry: {
     main: './main.js'
   },
   resolve: {
-
-
     alias: {
       d3: 'd3/index.js',
       './setPrototypeOf': './setPrototypeOf.js',
@@ -153,17 +141,17 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
+              name: '[name].[hash].[ext]',
+              outputPath: 'images/'
+            }
+          },
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10 * 1024,
+              noquotes: true
             }
           }
-          // {
-          //   loader: 'svg-url-loader',
-          //   options: {
-          //     limit: 10 * 1024,
-          //     noquotes: true
-          //   }
-          // }
         ]
       }
     ]
@@ -174,7 +162,6 @@ const config = {
     new CopyWebpackPlugin(
       {
         patterns: [
-
           { from: 'assets/images', to: 'images' },
           { from: 'assets/fonts', to: 'fonts' },
           { from: 'assets/manifest.json', to: 'manifest.json' },
