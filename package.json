@@ -112,6 +112,7 @@
         "autoprefixer": "^10.2.5",
         "copy-webpack-plugin": "^8.1.1",
         "css-loader": "5.2.4",
+        "css-minimizer-webpack-plugin": "^3.0.1",
         "cssnano": "^5.0.2",
         "emotion-theming": "^11.0.0",
         "eslint": "^7.25.0",

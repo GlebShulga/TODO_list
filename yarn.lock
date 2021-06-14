@@ -3666,6 +3666,19 @@
     "schema-utils" "^3.0.0"
     "semver" "^7.3.5"
 
+"css-minimizer-webpack-plugin@^3.0.1":
+  "integrity" "sha512-RGFIv6iZWUPO2T1vE5+5pNCSs2H2xtHYRdfZPiiNH8Of6QOn9BeFnZSoHiQMkmsxOO/JkPe4BpKfs7slFIWcTA=="
+  "resolved" "https://registry.npmjs.org/css-minimizer-webpack-plugin/-/css-minimizer-webpack-plugin-3.0.1.tgz"
+  "version" "3.0.1"
+  dependencies:
+    "cssnano" "^5.0.0"
+    "jest-worker" "^27.0.2"
+    "p-limit" "^3.0.2"
+    "postcss" "^8.2.9"
+    "schema-utils" "^3.0.0"
+    "serialize-javascript" "^5.0.1"
+    "source-map" "^0.6.1"
+
 "css-modules-require-hook@^4.0.6":
   "integrity" "sha1-Z5LKQSsV4j5vm+agfc739Xf/kE0="
   "resolved" "https://registry.npmjs.org/css-modules-require-hook/-/css-modules-require-hook-4.2.3.tgz"
@@ -3901,7 +3914,7 @@
     "is-resolvable" "^1.0.0"
     "postcss" "^7.0.0"
 
-"cssnano@^5.0.2":
+"cssnano@^5.0.0", "cssnano@^5.0.2":
   "integrity" "sha512-NiaLH/7yqGksFGsFNvSRe2IV/qmEBAeDE64dYeD8OBrgp6lE8YoMeQJMtsv5ijo6MPyhuoOvFhI94reahBRDkw=="
   "resolved" "https://registry.npmjs.org/cssnano/-/cssnano-5.0.6.tgz"
   "version" "5.0.6"
@@ -7340,6 +7353,15 @@
     "merge-stream" "^2.0.0"
     "supports-color" "^7.0.0"
 
+"jest-worker@^27.0.2":
+  "integrity" "sha512-EoBdilOTTyOgmHXtw/cPc+ZrCA0KJMrkXzkrPGNwLmnvvlN1nj7MPrxpT7m+otSv2e1TLaVffzDnE/LB14zJMg=="
+  "resolved" "https://registry.npmjs.org/jest-worker/-/jest-worker-27.0.2.tgz"
+  "version" "27.0.2"
+  dependencies:
+    "@types/node" "*"
+    "merge-stream" "^2.0.0"
+    "supports-color" "^8.0.0"
+
 "jest@^26.6.3":
   "integrity" "sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q=="
   "resolved" "https://registry.npmjs.org/jest/-/jest-26.6.3.tgz"
@@ -8732,7 +8754,7 @@
   dependencies:
     "p-try" "^2.0.0"
 
-"p-limit@^3.1.0":
+"p-limit@^3.0.2", "p-limit@^3.1.0":
   "integrity" "sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ=="
   "resolved" "https://registry.npmjs.org/p-limit/-/p-limit-3.1.0.tgz"
   "version" "3.1.0"
@@ -10000,7 +10022,7 @@
     "source-map" "^0.6.1"
     "supports-color" "^5.4.0"
 
-"postcss@^7.0.0 || ^8.0.1", "postcss@^8.0.0", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.1.13", "postcss@^8.1.6", "postcss@^8.2.1", "postcss@^8.2.10", "postcss@^8.2.13", "postcss@^8.2.15", "postcss@^8.2.2":
+"postcss@^7.0.0 || ^8.0.1", "postcss@^8.0.0", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.1.13", "postcss@^8.1.6", "postcss@^8.2.1", "postcss@^8.2.10", "postcss@^8.2.13", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.2.9":
   "integrity" "sha512-FCE5xLH+hjbzRdpbRb1IMCvPv9yZx2QnDarBEYSN0N0HYk+TcXsEhwdFcFb+SRWOKzKGErhIEbBK2ogyLdTtfQ=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.2.13.tgz"
   "version" "8.2.13"
@@ -11883,6 +11905,13 @@
   "integrity" "sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g=="
   "resolved" "https://registry.npmjs.org/supports-color/-/supports-color-7.1.0.tgz"
   "version" "7.1.0"
+  dependencies:
+    "has-flag" "^4.0.0"
+
+"supports-color@^8.0.0":
+  "integrity" "sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q=="
+  "resolved" "https://registry.npmjs.org/supports-color/-/supports-color-8.1.1.tgz"
+  "version" "8.1.1"
   dependencies:
     "has-flag" "^4.0.0"
 
