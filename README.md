@@ -9,6 +9,7 @@ This project was made with [React Boilerplate](https://github.com/ovasylenko/ski
 - Change task's status
 - Filter tasks by status
 - Сounter of tasks by status
+- Local file is used to simulate the DB
 
 ## How to use it?
 Install modules:
