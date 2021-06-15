@@ -47,6 +47,4 @@ const CurrentStatusButton = ({
   )
 }
 
-CurrentStatusButton.propTypes = {}
-
 export default CurrentStatusButton

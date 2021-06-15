@@ -55,6 +55,4 @@ const TaskList = () => {
   )
 }
 
-TaskList.propTypes = {}
-
 export default TaskList

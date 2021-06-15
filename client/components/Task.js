@@ -114,6 +114,4 @@ const Task = (props) => {
   )
 }
 
-Task.propTypes = {}
-
 export default React.memo(Task)
