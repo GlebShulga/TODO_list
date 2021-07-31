@@ -1,9 +1,11 @@
 const { resolve } = require('path')
 require('dotenv').config()
+const fs = require('fs')
 
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const CLIENT_PORT = 8087
@@ -25,6 +27,7 @@ const config = {
       './defineProperty': './defineProperty.js',
       '../../helpers/esm/typeof': '../../helpers/esm/typeof.js',
       './assertThisInitialized': './assertThisInitialized.js',
+
       d3: 'd3/index.js',
       'react-dom': '@hot-loader/react-dom'
     }
@@ -160,6 +163,7 @@ const config = {
   },
 
   plugins: [
+    // new webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/main.css',
       chunkFilename: 'css/[id].css',
