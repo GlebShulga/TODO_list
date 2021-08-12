@@ -18,6 +18,7 @@ module.exports = {
     : []
   ).concat([
     '@emotion',
+    '@babel/plugin-transform-runtime',
     '@babel/plugin-syntax-dynamic-import',
     ['@babel/plugin-proposal-decorators', { legacy: true }],
     [
