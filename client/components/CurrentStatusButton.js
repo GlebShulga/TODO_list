@@ -22,8 +22,6 @@ const CurrentStatusButton = ({
 
   const tasksByStatus = tasks?.filter((task) => task.status === status)
 
-  console.log(isActive, 'isActive')
-
   return (
     <button
       className={`${
