@@ -16,9 +16,9 @@ const CurrentStatusButton = ({
     })
 
   const quantityOfTasks =
-    Number(quantityOfTasksByStatus?.new || 0) +
-    Number(quantityOfTasksByStatus?.['in progress'] || 0) +
-    Number(quantityOfTasksByStatus?.done || 0)
+    Number(quantityOfTasksByStatus?.new ?? 0) +
+    Number(quantityOfTasksByStatus?.['in progress'] ?? 0) +
+    Number(quantityOfTasksByStatus?.done ?? 0)
 
   const tasksByStatus = tasks?.filter((task) => task.status === status)
 
