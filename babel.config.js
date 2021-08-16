@@ -13,11 +13,7 @@ module.exports = {
     '@babel/typescript'
   ],
 
-  plugins: (process.env.NODE_ENV === 'development'
-    ? ['react-hot-loader/babel', 'react-refresh/babel']
-    : []
-  ).concat([
-    '@emotion',
+  plugins: (process.env.NODE_ENV === 'development' ? ['react-refresh/babel'] : []).concat([
     '@babel/plugin-transform-runtime',
     '@babel/plugin-syntax-dynamic-import',
     ['@babel/plugin-proposal-decorators', { legacy: true }],
