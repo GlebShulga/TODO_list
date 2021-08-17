@@ -19,16 +19,12 @@ const config = {
     minimizer: [new TerserJSPlugin({ parallel: true })]
   },
   entry: {
-    main: './main.js'
+    main: './main.jsx'
   },
   resolve: {
-    fallback: { path: require.resolve('path-browserify') },
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      d3: 'd3/index.js',
-      './setPrototypeOf': './setPrototypeOf.js',
-      './defineProperty': './defineProperty.js',
-      '../../helpers/esm/typeof': '../../helpers/esm/typeof.js',
-      './assertThisInitialized': './assertThisInitialized.js'
+      d3: 'd3/index.js'
     }
   },
   output: {
@@ -49,13 +45,13 @@ const config = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.js|jsx$/,
         exclude: /node_modules/,
         include: [/client/, /server/],
         use: ['eslint-loader']
       },
       {
-        test: /\.js$/,
+        test: /\.js|jsx$/,
         use: 'babel-loader',
         exclude: /node_modules/
       },
