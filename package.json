@@ -1,6 +1,6 @@
 {
     "name": "todo-list",
-    "version": "1.0.2",
+    "version": "1.2.0",
     "description": "TODO List",
     "main": "index.js",
     "engines": {
@@ -26,9 +26,7 @@
         "build:prod": "cross-env NODE_ENV=production webpack --config webpack.production.config.js --progress --profile --color",
         "build:ssr": "cross-env NODE_ENV=production webpack --config webpack.ssr.config.js --progress --profile --color",
         "build": "npm run build:prod && npm run build:ssr",
-        "heroku-postbuild": "npm run build:prod && npm run build:ssr",
-        "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "heroku-postbuild": "npm run build:prod && npm run build:ssr"
     },
     "author": "",
     "license": "MIT",
