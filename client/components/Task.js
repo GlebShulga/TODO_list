@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeStatus, changeTitle, delTask } from '../redux/reducers/tasks'
 
-const Task = (props) => {
-  const { task } = props
+const Task = ({ task }) => {
   const [isEditingMode, setEditing] = useState(false)
   const [newTitle, setNewTitle] = useState(task.title)
   const dispatch = useDispatch()

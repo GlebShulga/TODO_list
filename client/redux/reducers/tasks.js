@@ -37,14 +37,15 @@ export function changeStatus(id, status) {
     const store = getState()
     const { listOfTasks } = store.tasks
 
-    const changedStatus = listOfTasks.map((item) =>
+    const taskWithChangedStatus = listOfTasks.map((item) =>
       item.taskId === id ? { ...item, status } : item
     )
-    dispatch({ type: CHANGE_STATUS, listOfTasks: changedStatus })
+    dispatch({ type: CHANGE_STATUS, listOfTasks: taskWithChangedStatus })
     axios({
       method: 'patch',
-      url: `/api/v1/tasks/${id}`,
+      url: `/api/v1/tasks`,
       data: {
+        id,
         status
       }
     })
@@ -69,8 +70,9 @@ export function changeTitle(id, title) {
   return (dispatch) => {
     axios({
       method: 'patch',
-      url: `/api/v1/tasks/${id}`,
+      url: `/api/v1/tasks`,
       data: {
+        id,
         title
       }
     }).then(({ data: listOfTasks }) => {
@@ -83,7 +85,10 @@ export function delTask(id) {
   return (dispatch) => {
     axios({
       method: 'delete',
-      url: `/api/v1/tasks/${id}`
+      url: `/api/v1/tasks`,
+      data: {
+        id
+      }
     }).then(({ data: listOfTasks }) => {
       dispatch({ type: DEL_TASK, listOfTasks })
     })

@@ -116,17 +116,9 @@ server.get('/api/v1/tasks', async (req, res) => {
   res.json(data)
 })
 
-server.patch('/api/v1/tasks/:id', async (req, res) => {
-  const { id } = req.params
-
+server.patch('/api/v1/tasks', async (req, res) => {
+  const { id } = req.body
   let { status, title } = req.body
-  const statusArray = ['done', 'new', 'in progress']
-  const check = statusArray.includes(status)
-  if (status && !check) {
-    res.status(501)
-    res.json({ status: 'error', message: 'incorrect status' })
-    res.end()
-  }
   const data = await toReadFile()
     .then((file) => {
       return file?.map((task) => {
@@ -153,8 +145,8 @@ server.patch('/api/v1/tasks/:id', async (req, res) => {
   res.json(FilterDeletedTasks(data))
 })
 
-server.delete('/api/v1/tasks/:id', async (req, res) => {
-  const { id } = req.params
+server.delete('/api/v1/tasks', async (req, res) => {
+  const { id } = req.body
   const data = await toReadFile()
     .then((file) =>
       file.map((task) => {
