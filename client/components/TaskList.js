@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Head from './Head'
 import { getTasks } from '../redux/reducers/tasks'
+import Head from './Head'
 import Task from './Task'
 import CreateTask from './CreateTask'
 import CurrentStatusButton from './CurrentStatusButton'
@@ -20,6 +20,8 @@ const TaskList = () => {
   }, [tasks])
 
   const statuses = ['new', 'in progress', 'done']
+  const allStatuses = 'all'
+  const title = 'ToDo List'
 
   const [activeStatus, setActiveStatus] = useState('all')
 
@@ -28,10 +30,10 @@ const TaskList = () => {
       <Head title="TODO List" />
       <div className="flex lg:py-8">
         <div className="w-full grid justify-items-center bg-blue-50">
-          <h1 className="text-gray-900 text-4xl pt-4">ToDo List</h1>
+          <h1 className="text-gray-900 text-4xl pt-4">{title}</h1>
           <div className="bg-white rounded shadow p-6 m-4 lg:w-3/4 lg:max-w-lg">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-4 px-3 lg:gap-1 gap-3">
-              {['all', ...statuses].map((status) => (
+              {[allStatuses, ...statuses].map((status) => (
                 <CurrentStatusButton
                   tasks={tasks}
                   status={status}
