@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeStatus, changeTitle, delTask } from '../redux/reducers/tasks'
+// import saveIcon from '../assets/static/images/saveIcon.svg'
 
 const Task = ({ task }) => {
   const [isEditingMode, setEditing] = useState(false)

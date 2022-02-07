@@ -6,12 +6,16 @@ const CreateTask = () => {
   const [title, setTitle] = useState('')
   const [error, setError] = useState(false)
   const dispatch = useDispatch()
+
+  const MAX_SYMBOLS_NUMBER = 15
+  const MIN_SYMBOLS_NUMBER = 3
+
   const onChange = (e) => {
     setTitle(e.target.value)
     setError(false)
   }
   const onClickAddTask = () => {
-    if (title.length <= 15 && title.length >= 3) {
+    if (title.length <= MAX_SYMBOLS_NUMBER && title.length >= MIN_SYMBOLS_NUMBER) {
       dispatch(addTask(title))
     } else {
       setError(true)
@@ -47,13 +51,13 @@ const CreateTask = () => {
       </div>
       {error && (
         <div className="text-red-600 pt-3 text-center">
-          <div> The task length must not be shorter than 3 characters</div>
+          <div> The task length must not be shorter than {MIN_SYMBOLS_NUMBER} characters</div>
           <div>and</div>
-          <div>must not exceed 15 characters.</div>
+          <div>must not exceed {MAX_SYMBOLS_NUMBER} characters.</div>
         </div>
       )}
     </div>
   )
 }
 
-export default React.memo(CreateTask)
+export default CreateTask
